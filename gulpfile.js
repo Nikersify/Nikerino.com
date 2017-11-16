@@ -1,0 +1,59 @@
+const fs = require('fs')
+
+const babelify = require('babelify')
+const browserify = require('browserify')
+const del = require('del')
+const gulp = require('gulp')
+const pug = require('gulp-pug')
+const sass = require('gulp-sass')
+
+gulp.task('js', () => {
+	return browserify('./app/js/index.js')
+		.transform(babelify, {
+			presets: [['env', {
+				targets: {
+					browsers: ['last 2 versions', 'safari >= 7']
+				}
+			}]]
+		})
+		.bundle()
+		.on('error', function (e) {
+			console.log(e.message)
+			this.emit('end')
+		})
+		.pipe(fs.createWriteStream('public/index.js'))
+})
+
+gulp.task('pug', done => {
+	return gulp.src('app/pug/index.pug')
+		.pipe(pug().on('error', err => {
+			done(err.message)
+		}))
+		.pipe(gulp.dest('public'))
+})
+
+gulp.task('assets', async () => {
+	await del('public/assets')
+	return gulp.src('app/assets/**/*').pipe(gulp.dest('public/assets'))
+})
+
+gulp.task('sass', () => {
+	return gulp.src('app/sass/*.sass')
+		.pipe(sass().on('error', sass.logError))
+		.pipe(gulp.dest('public'))
+})
+
+gulp.task('watch', () => {
+	gulp.watch('app/js/**/*', ['js'])
+	gulp.watch('app/pug/**/*', ['pug'])
+	gulp.watch('app/assets/**/*', ['assets'])
+	gulp.watch('app/sass/**/*', ['sass'])
+})
+
+gulp.task('default:prep', () => {
+	if (!fs.existsSync('public')) {
+		fs.mkdirSync('public')
+	}
+})
+
+gulp.task('default', ['default:prep', 'js', 'pug', 'assets', 'sass'])

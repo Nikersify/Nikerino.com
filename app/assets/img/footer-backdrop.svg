@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="810px" viewBox="0 0 1440 810" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>footer-backdrop</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#515E57" offset="0%"></stop>
+            <stop stop-color="#26372E" offset="100%"></stop>
+        </linearGradient>
+        <path d="M1.59161573e-12,0.956675872 L84.5312344,27.4989023 L84.5312344,27.4989023 C278.419743,88.3785611 480.454526,119.351843 683.676293,119.351843 L909.770722,119.351843 L909.770722,119.351843 C1011.72271,119.351843 1113.52546,127.147483 1214.28875,142.670592 L1440.25221,177.481438 L1440,784 L1.36424205e-12,784 L1.59161573e-12,0.956675872 Z" id="path-2"></path>
+        <filter x="-3.4%" y="-6.0%" width="106.8%" height="112.5%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="16" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Web" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop" transform="translate(0.000000, -3320.000000)">
+            <g id="Call-to-action" transform="translate(0.000000, 3346.000000)">
+                <g id="footer-backdrop">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                    <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

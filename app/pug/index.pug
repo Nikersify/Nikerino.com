@@ -1,0 +1,151 @@
+doctype html
+
+html
+	head
+		title nikerino.com
+		meta(charset='utf-8')
+
+		meta(name='description' content='nikersify\'s personal portfolio')
+
+		meta(property='og:type' content='website')
+		meta(property='og:url' content='https://nikerino.com')
+		meta(property='og:site_name' content='nikerino')
+		meta(property='og:image' content='https://nikerino.com/assets/img/picture.png')
+		meta(property='og:image:height' content='128')
+		meta(property='og:image:width' content='128')
+		meta(property='og:locale' content='en-US')
+		meta(property='og:title' content='nikersify\'s personal portfolio')
+		meta(property='og:description', content=
+			'personal projects, personal links, personal personals')
+
+		meta(property='twitter:image' content='https://nikerino.com/assets/img/picture.png')
+		meta(property='twitter:image:height' content='128')
+		meta(property='twitter:image:width' content='128')
+		meta(property='twitter:card' content='summary')
+
+		meta(name="viewport" content="initial-scale=1, maximum-scale=1")
+
+		link(href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700" rel="stylesheet")
+		style
+			include ../../node_modules/normalize.css/normalize.css
+		link(rel='stylesheet' href='main.css')
+		script(src='/index.js' defer)
+	body
+		#loading-overlay
+		.content
+			section.splash
+				.backdrop
+				.nav
+					.left
+						a.brand#brand(href='#')
+							.picture(href='#')
+								img(src='/assets/img/picture-small.png' alt='Small picture')
+							.name#brand-name(href='#') Maciej
+
+						a.small(href='#') About
+						a.small(href='#showcase') Open-source
+						a.small(href='#contact') Social
+
+					.right
+						a.big(href='mailto:nikersify@nikerino.com') Contact
+							i(data-feather='mail')
+
+				.contain-inner-wide
+					.lead
+						.center
+							h1.text-underline#lead-name Maciej #[span.text-regular Łaszcz]
+							p.
+								#[strong Hi!] I'm a polish-based fullstack
+								#[strong web developer] doing mainly freelance work and
+								developing open-source tools and services in my spare time.
+							.buttons-row
+								a.small(href='https://github.com/nikersify') GitHub
+								a.big(href='mailto:nikersify@nikerino.com') Contact
+									i(data-feather='mail')
+				.proceed: img(src='/assets/img/angle-down.svg')
+
+			section.showcase#showcase
+				.contain-inner
+					h1.section-header Things I've made
+					.projects
+						.project.text-underline
+							.text
+								h1.text-underline fig.js
+								p.
+									Experimental front-end framework which uses #[a(href='https://pugjs.org') pug templates] to render apps' contents. The project consists of a #[a(href='http://browserify.org/') browserify] transform, a separate compiler package, a website containing the documentation, and the library itself!
+								.buttons-row
+									a.small(href='https://npmjs.com/package/figjs')
+										| See on npm
+									a.big(href='https://github.com/nikersify/fig')
+										| Github
+										i(data-feather='github')
+							a(href='https://fig.nikerino.com')
+								.link
+									.image
+										img(src='/assets/img/projects/fig.png'
+											alt='Fig screenshot')
+									p
+										| #[strong Visit] website
+										i(data-feather='arrow-right')
+						.project
+							.text
+								h1.text-underline splush!
+								p.
+									Have you ever wanted to know precisely when a remote unix job has been finished from the comfort of your mobile phone (or another device running a browser running notifications) without moving a muscle? Well look no further and splush away!
+								.buttons-row
+									a.small(href='https://npmjs.com/package/splush')
+										| See on npm
+									a.big(href='https://github.com/nikersify/splush')
+										| Github
+										i(data-feather='github')
+							a(href='https://splush.nikerino.com')
+								.link
+									.image
+										img(src='/assets/img/projects/splush.png'
+											alt='Splush screenshot')
+									p
+										| #[strong Visit] website
+										i(data-feather='arrow-right')
+						.project
+							.text
+								h1.text-underline link
+								p.
+									The most original project idea of all time! Near instant results, click statistics divided by stuff like browser type, operating system or country and a sketchy looking domain makes it the number π choice in terms of shortening your links!
+								.buttons-row
+									a.small(href='https://link.nikerino.com')
+										| See on the web
+									a.big(href='https://github.com/nikersify/link')
+										| Github
+										i(data-feather='github')
+							a(href='https://link.nikerino.com')
+								.link
+									.image
+										img(src='/assets/img/projects/link.png'
+											alt='Link screenshot')
+									p
+										| #[strong Visit] website
+										i(data-feather='arrow-right')
+
+			section.action#contact
+				.contain-inner
+					.main
+						p Stalk my #[strong internet stuff]
+						.buttons
+							a.button-glass(href='https://steamcommunity.com/id/nikersify')
+								img(src='/assets/img/fa-steam.png')
+							a.button-glass(href='https://github.com/nikersify')
+								img(src='/assets/img/fa-github.png')
+							a.button-glass(href='https://keybase.io/nikersify')
+								img(src='/assets/img/fa-key.png')
+						p Or simply #[strong drop me a message...]
+						a.big(href='mailto:nikersify@nikerino.com')
+							| Contact
+							i(data-feather='mail')
+					p.credits
+						| Designed and built by
+						| #[strong Maciej]
+						| Łaszcz (#[strong nikersify]) :]
+
+			#back-to-top
+				a.button-glass(href='#')
+					i(data-feather='arrow-up')
