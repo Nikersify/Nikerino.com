@@ -16,14 +16,14 @@ feather.replace()
 // Anchor smooth scroll
 const $anchors = qsa('a')
 for (const $a of $anchors) {
-	$a.addEventListener('click', e => {
-		if (!e.target.href) {
-			return
-		}
+	if (!$a.href) {
+		continue
+	}
 
-		const url = new URL(e.target.href)
+	const url = new URL($a.href)
 
-		if (url.origin === window.location.origin) {
+	if (url.origin === window.location.origin) {
+		$a.addEventListener('click', e => {
 			e.preventDefault()
 			const id = url.hash
 
@@ -40,8 +40,8 @@ for (const $a of $anchors) {
 			}
 
 			window.scrollTo(to)
-		}
-	})
+		})
+	}
 }
 
 // Easter egg
