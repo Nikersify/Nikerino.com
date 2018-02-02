@@ -1,5 +1,8 @@
 const feather = require('feather-icons')
 const h = require('hyperscript')
+const smoothPolyfill = require('smoothscroll-polyfill')
+
+smoothPolyfill.polyfill()
 
 const qs = document.querySelector.bind(document)
 const qsa = document.querySelectorAll.bind(document)
