@@ -81,6 +81,29 @@ if (window.localStorage.getItem('nikerified') === 'true') {
 	nikerify(true)
 }
 
+// NPM package versions
+const $npms = qsa('[data-npm-version]')
+const npmsEndpoint = 'https://api.npms.io/v2/package/'
+for (const $npm of $npms) {
+	const packageName = $npm.dataset.npmVersion
+	$npm.innerText = '...'
+
+	const url = npmsEndpoint + window.encodeURIComponent(packageName)
+
+	const xhr = new XMLHttpRequest()
+	xhr.open('GET', url, true)
+	xhr.responseType = 'json'
+	xhr.onload = () => {
+		if (xhr.status === 200) {
+			try {
+				$npm.innerText = xhr.response.collected.metadata.version
+			} catch (err) {
+				console.error(err)
+			}
+		}
+	}
+	xhr.send()
+}
 // Back to top
 const $btt = qs('#back-to-top')
 const $action = qs('section.action')
