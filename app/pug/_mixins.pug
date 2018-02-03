@@ -1,0 +1,17 @@
+mixin feather(name)
+	i(data-feather=name)
+
+mixin gh-button(repo)
+	- const href = repo ? `https://github.com/nikersify/${repo}` : null
+	if href
+		a.big(href=href)
+			| GitHub
+			+feather('github')
+	else
+		.big GitHub
+			+ feather('github')
+
+mixin mail-button
+	a.big(href='mailto:nikersify@nikerino.com')
+		| Contact
+		i(data-feather='mail')
