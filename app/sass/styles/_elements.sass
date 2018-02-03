@@ -1,11 +1,13 @@
-a.button-glass
+.button-glass
 	background: $gradient-glass
+	background-repeat: no-repeat
 	border-radius: 50%
 	border: 1px solid $color-gray
 	display: inline-block
 	height: 50px
 	position: relative
 	width: 50px
+	transition: $animation-time background
 
 	& > svg
 		stroke: white
@@ -20,14 +22,22 @@ a.button-glass
 		top: 0
 		width: 35%
 
-a.big
+	&:hover
+		background-position-y: -10px
+
+.big
 	background-color: $color-lead
 	border-radius: 1000px
-	color: white
+	box-shadow: 0px 2px 10px rgba(black, 0.5)
+	color: white !important
 	display: inline-block
 	font-size: 20px
 	font-weight: bold
 	padding: 12.5px 30px
+	transition: $animation-time all
+
+	&[href]:hover
+		box-shadow: 0px 2px 20px rgba(black, 0.5)
 
 	svg
 		margin-right: 0
@@ -65,7 +75,7 @@ a.big
 	right: 25px
 	bottom: -50px
 	opacity: 0
-	transition: 0.25s all ease-in-out
+	transition: $animation-time all ease-in-out
 
 	&.show
 		opacity: 1
