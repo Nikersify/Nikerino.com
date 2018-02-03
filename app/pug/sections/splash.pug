@@ -1,0 +1,32 @@
+section.splash
+	.backdrop
+	.nav
+		.left
+			a.brand#brand(href='#')
+				.picture
+					img(src='/assets/img/picture-small.png' alt='Small picture')
+				.name#brand-name Maciej
+
+			a.small(href='#') About
+			a.small(href='#showcase') Open-source
+			a.small(href='#contact') Social
+
+		.right
+			a.big(href='mailto:nikersify@nikerino.com') Contact
+				i(data-feather='mail')
+
+	.contain-inner-wide
+		.lead
+			.center
+				h1.text-underline#lead-name Maciej #[span.text-regular Łaszcz]
+				p.
+					#[strong Hi!] I'm a polish-based fullstack
+					#[strong web developer] doing mainly freelance work and
+					developing open-source tools and services in my spare time.
+				.buttons-row
+					a.small(href='https://github.com/nikersify') GitHub
+					a.big(href='mailto:nikersify@nikerino.com') Contact
+						i(data-feather='mail')
+	.proceed: a(href='#showcase')
+		img(src='/assets/img/angle-down.svg')
+
