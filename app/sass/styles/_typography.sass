@@ -1,0 +1,42 @@
+body
+	color: $color-black
+	font-family: 'Open Sans', 'sans-serif'
+	font-size: 18px
+	font-weight: normal
+
+strong
+	font-weight: 700
+
+span.text-regular
+	font-weight: normal
+
+h1
+	font-family: 'Montserrat', 'sans-serif'
+	font-size: 36px
+	font-weight: bold
+	margin: 1em 0
+
+	&.text-underline
+		position: relative
+
+		&:after
+			+line
+			content: ''
+			position: absolute
+			bottom: -9.5px
+			left: 0
+
+	&.section-header
+		text-align: center
+		margin: 0
+		padding: 150px 0
+
+a
+	color: $color-black
+	text-decoration: none
+
+p
+	line-height: 2em
+
+	a
+		color: $color-lead

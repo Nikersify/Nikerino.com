@@ -1,0 +1,80 @@
+a.button-glass
+	background: $gradient-glass
+	border-radius: 50%
+	border: 1px solid $color-gray
+	display: inline-block
+	height: 50px
+	position: relative
+	width: 50px
+
+	& > svg
+		stroke: white
+
+	& > *
+		bottom: 0
+		height: 35%
+		left: 0
+		margin: auto
+		position: absolute
+		right: 0
+		top: 0
+		width: 35%
+
+a.big
+	background-color: $color-lead
+	border-radius: 1000px
+	color: white
+	display: inline-block
+	font-size: 20px
+	font-weight: bold
+	padding: 12.5px 30px
+
+	svg
+		margin-right: 0
+		margin-left: 0.75em
+
+.buttons-row
+	margin-top: 2em
+
+	a
+		margin: 0 25px
+
+		&:first-child
+			margin-left: 0
+
+		&:last-child
+			margin-right: 0
+
+#loading-overlay
+	position: fixed
+	background-color: white
+	transition: 1s all ease-out
+	opacity: 1
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	z-index: 99
+
+	&.hide
+		opacity: 0
+		pointer-events: none
+
+#back-to-top
+	position: fixed
+	right: 25px
+	bottom: -50px
+	opacity: 0
+	transition: 0.25s all ease-in-out
+
+	&.show
+		opacity: 1
+		bottom: 25px
+
+		+bp('small')
+			bottom: 75px
+
+svg.feather
+	height: 1.25em
+	margin: 0 5px
+	vertical-align: middle

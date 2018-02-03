@@ -1,0 +1,91 @@
+section.showcase
+	.projects
+		.project
+			display: flex
+			justify-content: space-between
+			margin: 0 0 300px 0
+			position: relative
+
+			+bp('medium')
+				flex-direction: column-reverse !important
+				text-align: center
+
+				h1.text-underline:after
+					display: none
+
+			+bp('small')
+				margin: 0 0 150px 0
+				padding-bottom: 150px
+
+				&:after
+					+line
+					content: ''
+					position: absolute
+					left: 0
+					right: 0
+					margin: auto
+					bottom: -20px
+
+				&:last-child:after
+					display: none
+
+			.text
+				+bp('small')
+					padding: 0 $padding-body
+
+				p
+					max-width: 40ch
+
+					+bp('medium')
+						margin: auto
+
+			.link
+				text-align: right
+
+				+bp('medium')
+					text-align: center
+
+				.image
+					position: relative
+					display: inline-block
+
+					$br: 25px
+
+					+bp('small')
+						margin: 0 $padding-body
+
+					img
+						border-radius: $br
+						border: 1px $color-gray solid
+						box-shadow: 0px 10px 32px 0px rgba(black, 0.5)
+						display: block
+						max-width: 100%
+						width: 600px
+
+						+bp('medium')
+							margin: 0 auto 25px auto
+
+					&:after
+						position: absolute
+						content: ''
+						width: 100%
+						height: 100%
+						top: 0
+						bottom: 0
+						right: 0
+						left: 0
+						border-radius: $br
+						background: $gradient-glass
+						z-index: 1
+
+				p
+					display: block
+
+					+bp('medium')
+						display: none
+
+			&:nth-child(2n)
+				flex-direction: row-reverse
+
+			&:last-child
+				margin-bottom: 0

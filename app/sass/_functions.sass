@@ -1,0 +1,14 @@
+// breakpoint
+=bp($name)
+	@media screen and (max-width: #{map-get($breakpoints, $name)})
+		@content
+
+// breakup
+=bu($name)
+	@media screen and (min-width: #{map-get($breakpoints, $name)})
+		@content
+
+=line
+	background-color: $color-lead
+	height: 3px
+	width: 70px
