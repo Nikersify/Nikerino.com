@@ -104,6 +104,7 @@ for (const $npm of $npms) {
 	}
 	xhr.send()
 }
+
 // Back to top
 const $btt = qs('#back-to-top')
 const $action = qs('section.action')
@@ -116,3 +117,7 @@ window.addEventListener('scroll', () => {
 		$btt.classList.remove('show')
 	}
 })
+
+// Copyright year (xd)
+const $year = qs('#year')
+$year.innerText = new Date().getFullYear()
