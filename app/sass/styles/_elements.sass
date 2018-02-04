@@ -44,7 +44,9 @@
 		margin-left: 0.75em
 
 .buttons-row
+	display: inline-flex
 	margin-top: 2em
+	align-items: center
 
 	a
 		margin: 0 25px
@@ -54,6 +56,11 @@
 
 		&:last-child
 			margin-right: 0
+
+	+bp('x-small')
+		flex-direction: column
+		a
+			margin: 0 0 1em 0
 
 #loading-overlay
 	position: fixed

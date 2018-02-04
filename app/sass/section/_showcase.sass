@@ -95,18 +95,40 @@ section.showcase
 			margin: 0 auto 1em auto
 			display: flex
 			align-items: center
+			flex-wrap: wrap
+
+			.name
+				@extend h1
+				margin: 0 20px
+				text-align: center
 
 			.version
 				@extend .thin-box
 				width: 80px
 				text-align: center
 
-			.name
-				@extend h1
-				margin: 0 20px
-
 			.description
+				@extend p
 				flex: 1
+
+			+bp('medium')
+				margin-bottom: 2em
+				max-width: unset
+				margin: 0 20px 100px 20px
+				flex-direction: column
+
+				.name
+					margin: 0
+
+				.description
+					margin: 0.5em 0
+					text-align: center
+
+				.version
+					margin-bottom: 0.5em
+
+				.big
+					margin-top: 0.5em
 
 			&:hover
 				.big
